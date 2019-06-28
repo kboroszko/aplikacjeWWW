@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Lista pokemonów</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="list.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header" id="naglowek">
+            <div class="long">Pokémon - nazwa serii gier konsolowych firmy Nintendo, tworzonych od 1996 przez Satoshiego Tajiri.
+            </div>
+            <div class="short">Pokémon</div>
+        </header>
+        <div class="content">
+            <section id="typyPokemonow">
+                <div>
+                    <div class="listTitle">
+                        Każdy pokémon posiada typ, który określa moce i możliwości, jakie posiada, określając w ten
+                        sposób
+                        jego dalszy rozwój i ewolucję. Istnieją pokémony posiadające dwa typy. W sumie istnieje
+                        osiemnaście
+                        typów:
+                    </div>
+                    <div class="list long" id='typy'>
+                        <ul>
+                            <li>baśniowe (fairy) </li>
+                            <li>duchowe (ghost), </li>
+                            <li>elektryczne (electric), </li>
+                            <li>kamienne (rock), </li>
+                            <li>latające (flying), </li>
+                            <li>lodowe (ice), </li>
+                            <li>mroczne (dark), </li>
+                            <li>normalne (normal), </li>
+                            <li>ogniste (fire), </li>
+                            <li>psychiczne (psychic), </li>
+                            <li>robacze (bug), </li>
+                            <li>smocze (dragon), </li>
+                            <li>stalowe (steel), </li>
+                            <li>trawiaste (grass), </li>
+                            <li>trujące (poison), </li>
+                            <li>walczące (fighting), </li>
+                            <li>wodne (water),</li>
+                            <li>ziemne (ground).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="tabelka">
+                <div>
+                <table>
+                    <tr>
+                        <th>Nazwa</th>
+                        <th>Wzrost</th>
+                        <th>Waga</th>
+                        <th>Groźny</th>
+                    </tr>
+                    <% for (let pokemon_info of pokemons) { %>
+                        <% let {id, name, height, weight} = pokemon_info;%>
+                    <tr>
+                        <td id="name"><a href="pokemon?pokemon_id=<%= id%>"><%= name %></a></td>
+                        <td id="height"><%= height%></td>
+                        <td id="weight"><%= weight%></td>
+                        <td>nie</td>
+                    </tr>
+                    <% }; %>
+                    
+                </table>
+            </div>
+            </section>
+        </div>
+        <footer class="footer">
+            <div id='stopka' class="long">
+                Pokémon – japoński serial anime tworzony od 1997 roku. W Japonii odcinki
+                dzielą się na sześć serii: Pokémon, Pokémon: Advanced Generation,
+                Pokémon: Diamond &amp; Pearl, Pokémon: Best Wishes!, Pokémon: XY i Pokémon
+                Sun &amp; Moon, jednak wszędzie poza nią stosowany jest podział na 21
+                sezonów.
+            </div>
+            <div id='stpka' class="short">Pokémon</div>
+        </footer>
+    </div>
+</body>
+
+<script src="list.js"></script>
+
+</html>
